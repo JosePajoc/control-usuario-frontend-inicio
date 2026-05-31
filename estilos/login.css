@@ -1,0 +1,28 @@
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.contenidoFormulario{
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: all ease 0.5s;
+    button{
+        width: 10vw;
+    }
+}
+.contenidoFormulario:hover{
+    box-shadow: 5px 5px 10px black;
+}
