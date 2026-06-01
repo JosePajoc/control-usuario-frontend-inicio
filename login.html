@@ -6,6 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="estilos/styles.css">
     <link rel="stylesheet" href="estilos/login.css">
+    <script src="logica/login.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,11 +22,12 @@
     <main>
         <p>Puedes acceder al sistema utilizando el usuario "visita" y la contraseña "acceso123".</p>
         <div class="contenidoFormulario">
-            <form>
+            <form id="formularioLogin">
                 <label for="txtUsuario">Usuario: </label><br><input type="text" id="txtUsuario" placeholder="visita"><br><br>
                 <label for="txtUsuario">Contraseña: </label><br><input type="password" id="txtContrasena" placeholder="acceso123"><br><br>
-                <button type="submit">Ingresar</button>            
+                <button type="submit" id="btnIngresar">Ingresar</button>            
             </form>
+            <p id="respuestaServidor">La respuesta del servidor es: </p>
         </div>
     </main>
     <footer>

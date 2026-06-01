@@ -26,3 +26,7 @@ main{
 .contenidoFormulario:hover{
     box-shadow: 5px 5px 10px black;
 }
+
+#respuestaServidor{
+        font-size: 0.8rem;
+    }
