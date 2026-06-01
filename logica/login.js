@@ -14,21 +14,24 @@ formularioLogin.addEventListener("submit", async (evento) =>{
 
 async function iniciarSesion(usuario) {
     try{
-        const params = new URLSearchParams();
-        params.append("username", usuario.username);
-        params.append("password", usuario.password);
+        const parametros = new URLSearchParams();   //objeto para crear pares de clave-valor
+        parametros.append("username", usuario.username);
+        parametros.append("password", usuario.password);
 
+        //cambia el tipo de envio
+        //Ya no es "application/json" ahora pasa a clave-valor
         const respuesta = await fetch("http://127.0.0.1:8000/token", {
             method: "POST",
-            headers: {"Content-Type": "application/x-www-form-urlencoded"},
-            body: params
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},  
+            body: parametros
         });
         if(respuesta.ok){
             const datos = await respuesta.json()
             respuestaServidor.innerText = `Token: ${datos["access_token"]} tipo de token: ${datos["token_type"]}`;
             //toca guardar el token en el session storage y en el backend proteger rutas
+        }else{
+            respuestaServidor.innerText = "Credenciales incorrectas";
         }
-        
     }catch (error){
         respuestaServidor.innerText = "No hay conexión";
     }
