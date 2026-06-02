@@ -1,6 +1,8 @@
 const formularioLogin = document.getElementById("formularioLogin");
 const username = document.getElementById("txtUsuario");
 const password = document.getElementById("txtContrasena");
+const modal = document.getElementById("modal");
+const tituloModal = document.getElementById("tituloModal");
 const respuestaServidor = document.getElementById("respuestaServidor");
 
 formularioLogin.addEventListener("submit", async (evento) =>{
@@ -17,22 +19,34 @@ async function iniciarSesion(usuario) {
         const parametros = new URLSearchParams();   //objeto para crear pares de clave-valor
         parametros.append("username", usuario.username);
         parametros.append("password", usuario.password);
-
-        //cambia el tipo de envio
-        //Ya no es "application/json" ahora pasa a clave-valor
+        //Tipo de contenido: clave-valor
         const respuesta = await fetch("http://127.0.0.1:8000/token", {
             method: "POST",
             headers: {"Content-Type": "application/x-www-form-urlencoded"},  
-            body: parametros
+            body: parametros,
+            credentials: "include" //enviar y almacendar cookies automaticamente
         });
+        
         if(respuesta.ok){
-            const datos = await respuesta.json()
-            respuestaServidor.innerText = `Token: ${datos["access_token"]} tipo de token: ${datos["token_type"]}`;
-            //toca guardar el token en el session storage y en el backend proteger rutas
+            const datos = await respuesta.json();
+            respuestaServidor.classList.remove("errorTexto");
+            
+            tituloModal.innerHTML = "Bienvenido - Cargando Dashboard";
+            respuestaServidor.innerText = datos.message;
         }else{
+            respuestaServidor.classList.add("errorTexto");
+            tituloModal.innerHTML = "Error";
             respuestaServidor.innerText = "Credenciales incorrectas";
         }
+
+        modal.showModal();
+        setTimeout(()=>{
+            // modal.close();
+            window.location.href = "dashboard.html";
+        }, 2500);
+
     }catch (error){
+        respuestaServidor.classList.add("errorTexto");
         respuestaServidor.innerText = "No hay conexión";
     }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link rel="stylesheet" href="estilos/login.css">
+    <script src="logica/dashboard.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><li class="opcionMenu">Inicio</li></a>
+                <a href=""><li class="opcionMenu">Almacenar</li></a>
+                <a href=""><li class="opcionMenu">Eliminar</li></a>
+                <a href=""><li class="opcionMenu">Buscar</li></a>
+                <button class="opcionMenu"><li id="btnSalir">Salir</li></button>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Bienvenido a la APP</p>
+        <h2 id="nombreUsuario"></h2>
+        <p id="tipoUsuario"></p>
+        <dialog id="modal">
+            <h2 id="tituloModal"></h2>
+            <p id="respuestaServidor"></p>
+        </dialog>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/jose-pajoc-18-05-/" target="_blank"><img src="assets/icono-linkedin.svg" class="iconos"> linkedin</a>
+        <p>Copyright 2026 - José Pajoc</p>
+        <a href="mailto:jose.ernesto.pajoc@gmail.com"><img src="assets/icono-correo.svg" class="iconos"> jose.ernesto.pajoc@gmail.com</a>
+    </footer>
+</body>
+</html>

@@ -72,3 +72,7 @@ a:hover{
 p{
     text-align: justify;
 }
+
+.errorTexto{
+    color:red;
+}
