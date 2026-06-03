@@ -1,6 +1,7 @@
 const formularioLogin = document.getElementById("formularioLogin");
 const username = document.getElementById("txtUsuario");
 const password = document.getElementById("txtContrasena");
+
 const modal = document.getElementById("modal");
 const tituloModal = document.getElementById("tituloModal");
 const respuestaServidor = document.getElementById("respuestaServidor");
@@ -33,17 +34,23 @@ async function iniciarSesion(usuario) {
             
             tituloModal.innerHTML = "Bienvenido - Cargando Dashboard";
             respuestaServidor.innerText = datos.message;
+
+            modal.showModal();
+            setTimeout(()=>{
+                // modal.close();
+                window.location.href = "dashboard.html";
+            }, 2500);
+
         }else{
             respuestaServidor.classList.add("errorTexto");
             tituloModal.innerHTML = "Error";
             respuestaServidor.innerText = "Credenciales incorrectas";
+            
+            modal.showModal();
+            setTimeout(()=>{
+                modal.close();
+            }, 2000);
         }
-
-        modal.showModal();
-        setTimeout(()=>{
-            // modal.close();
-            window.location.href = "dashboard.html";
-        }, 2500);
 
     }catch (error){
         respuestaServidor.classList.add("errorTexto");

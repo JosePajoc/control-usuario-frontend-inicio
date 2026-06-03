@@ -20,11 +20,25 @@
     </header>
     <main>
         <div>
-            <h2>Información del proyecto</h2>
-            <p>El proyecto se contruyo con Vanilla JS para el Frontend y FastApi para el Backend, al acceder a la página inicial se realiza una petición GET para levantar los servicios en Render, el cual es el sitio donde se ha desplegado el proyecto.</p>
+            <h2>Sistema de autenticación y gestión de usuarios con FastAPI y Vanilla JS </h2><br>
+            <p><b>Frontend</b><br> Interfaz construida con HTML, CSS y JavaScript el cual se conecta a un backend en FastAPI. Implementa un flujo de login y logout seguros mediante cookies HttpOnly, muestra el perfil del usuario y renderiza dinámicamente tablas con datos de la API. Incluye modales interactivos para mensajes de bienvenida, errores y logout, además de un sistema de manejo de errores que garantiza una experiencia fluida y protegida.</p>
             <br>
-            <p>El estado del servido es: "<span id="estadoServer">Desconectado</span>"</p>
+
+            <p><b>Backend</b><br>  
+                Desarrollado con FastAPI, este backend implementa un sistema seguro de autenticación y control de usuarios, algunas funcionalidades son:</p>
+                <ul id="descripcionBackend">
+                    <li>Hashing de contraseñas con pwdlib para proteger credenciales.</li>
+                    <li>Autenticación: Validación de usuario y contraseña con una base de datos simulada en memoria.</li>
+                    <li>JWT en cookies HttpOnly: Generación de tokens con expiración de 10 minutos, almacenados en cookies seguras.</li>
+                    <li>Login y logout: Endpoints "/token" y "/logout" para iniciar y finalizar sesión.</li>
+                    <li>CORS Middleware configurado para permitir comunicación segura con el frontend.</li>
+                </ul>          
+           
+           <br>
+            <hr>
+            <p>Al acceder a la página principal se realizar una petición al servidor para levantar el Backend en Render. <br>El estado del servido es: "<span id="estadoServer">Desconectado</span>"</p>
         </div>
+        <br><h4>Actualmente no cuenta con un diseño para dispositivos móviles.</h4>
     </main>
     <footer>
         <a href="https://www.linkedin.com/in/jose-pajoc-18-05-/" target="_blank"><img src="assets/icono-linkedin.svg" class="iconos"> linkedin</a>

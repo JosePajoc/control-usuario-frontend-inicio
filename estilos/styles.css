@@ -9,6 +9,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav{
@@ -35,7 +36,11 @@ main{
     width: 85vw;
     background-color: white;
     margin: 0 auto;
-    padding: 10px;
+    padding: 15px;
+}
+
+#descripcionBackend{
+    margin-left: 40px;
 }
 
 footer{
@@ -75,4 +80,23 @@ p{
 
 .errorTexto{
     color:red;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td{
+    border: 1px solid black;
+    padding: 5px;
+}
+th{
+    background-color: #02ABE3;
+}
+tr:nth-child(even){
+    background-color: #c3eff5;
+}
+tr:hover{
+    background-color: #A5CACF;
+    cursor: default;
 }
