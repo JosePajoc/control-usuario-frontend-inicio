@@ -100,3 +100,42 @@ tr:hover{
     background-color: #A5CACF;
     cursor: default;
 }
+
+@media (max-width: 480px) {
+    nav{
+        font-size: 1rem;
+        padding: 5px;
+        height: auto;
+        ul{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 3px;
+            li{
+                text-align: center;
+                border: black solid 1px;
+            }
+        }
+    }
+    main{
+        height: auto;
+        width: 90vw;
+        background-color: white;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    footer{
+        background-color: #02ABE3;
+        height: auto;
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+        p{
+            text-align: center;
+        }
+    }
+}
