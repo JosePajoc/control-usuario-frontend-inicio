@@ -27,6 +27,7 @@ btnSalir.addEventListener("click", async ()=>{
 
             modal.showModal();
             setTimeout(()=>{
+                sessionStorage.clear();
                 window.location.replace("index.html"); //evitar volver atrás con el navegador
             }, 2500);
         }else{
