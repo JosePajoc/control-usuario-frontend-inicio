@@ -13,8 +13,8 @@ const contenidoTabla = document.getElementById("contenidoTabla");
 //---------------------------Salir de la app---------------------------------------
 btnSalir.addEventListener("click", async ()=>{
     try{
-        //const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/logout"
-        const respuesta = await fetch("http://127.0.0.1:8000/logout",{
+        //const respuesta = await fetch("http://127.0.0.1:8000/logout",{
+        const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/logout",{
             method: "POST",
             credentials: "include" //enviar cookie HttpOnly
         });
@@ -51,8 +51,8 @@ btnSalir.addEventListener("click", async ()=>{
 //--------------------Cargar datos del usuario utilizando Cookie HttpOnly--------------------
 async function cargarPerfil() {
     try{
-        //const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/usuarios/me"
-        const respuesta = await fetch("http://127.0.0.1:8000/usuarios/me",
+        //const respuesta = await fetch("http://127.0.0.1:8000/usuarios/me"
+        const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/usuarios/me",
             {
                 method: "GET",
                 credentials: "include" //permite usar la cookie HttpOnly
@@ -83,8 +83,8 @@ async function cargarPerfil() {
 //--------------------ver usuarios utilizando Cookie HttpOnly--------------------
 btnVerUsuarios.addEventListener("click", async () => {
     try{
-        //const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/usuarios"
-        const respuesta = await fetch("http://127.0.0.1:8000/usuarios",
+        //const respuesta = await fetch("http://127.0.0.1:8000/usuarios"
+        const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/usuarios",
             {
                 method: "GET",
                 credentials: "include" //permite usar la cookie HttpOnly

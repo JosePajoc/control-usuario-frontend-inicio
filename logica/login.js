@@ -21,8 +21,8 @@ async function iniciarSesion(usuario) {
         parametros.append("username", usuario.username);
         parametros.append("password", usuario.password);
         //Tipo de contenido: clave-valor
-        //const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/token",
-        const respuesta = await fetch("http://127.0.0.1:8000/token", {
+        //const respuesta = await fetch("http://127.0.0.1:8000/token",
+        const respuesta = await fetch("https://control-usuario-backend-inicio.onrender.com/token", {
             method: "POST",
             headers: {"Content-Type": "application/x-www-form-urlencoded"},  
             body: parametros,
